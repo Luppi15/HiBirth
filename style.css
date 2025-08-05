@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap');
+
+body {
+    font-family: 'Baloo 2', cursive, sans-serif;
+    font-weight: 700;
+}
+
+
+.heart {
+    background-image: url('heart/HI.png');
+    animation: pulse-bg 2s infinite, pulse-scale 2s infinite;
+}
+
+.ultrapink {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FF39B3;
+    opacity: 0;
+    pointer-events: none;
+    clip-path: circle(0% at 50% 50%);
+    transition: opacity 0.3s;
+    z-index: 1000;
+}
+
+.ultrapink.active {
+    opacity: 1;
+    pointer-events: auto;
+    animation: heart-reveal 1.5s forwards; /* duração aumentada */
+}
+
+@keyframes heart-reveal {
+    0% {
+        clip-path: circle(0% at 50% 50%);
+        opacity: 0;
+    }
+    20% {
+        clip-path: circle(5% at 50% 50%); /* começa menor */
+        opacity: 1;
+    }
+    60% {
+        clip-path: circle(40% at 50% 50%);
+        opacity: 1;
+    }
+    100% {
+        clip-path: circle(150% at 50% 50%);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse-bg {
+    0%, 100% {
+        background-image: url('heart/HI.png');
+    }
+    50% {
+        background-image: url('heart/RAI.png');
+    }
+}
+
+@keyframes pulse-scale {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
