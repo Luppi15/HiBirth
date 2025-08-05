@@ -7,7 +7,7 @@ body {
 
 
 .heart {
-    background-image: url('heart/HI.png');
+    background-image: url('heart/heart.gif');
     animation: pulse-bg 2s infinite, pulse-scale 2s infinite;
 }
 
@@ -51,14 +51,6 @@ body {
     }
 }
 
-@keyframes pulse-bg {
-    0%, 100% {
-        background-image: url('heart/HI.png');
-    }
-    50% {
-        background-image: url('heart/RAI.png');
-    }
-}
 
 @keyframes pulse-scale {
     0%, 100% {
